@@ -1,2 +1,41 @@
-# chengetAI-
-AGRITECH
+
+# ChengetAi
+
+ChengetAi is a digital agriculture intelligence platform designed to help farmers, institutions, and ministries make faster, data-driven decisions.
+
+## Vision
+
+To become the trusted decision layer for smallholder and commercial agriculture in Zimbabwe and beyond, by turning scattered data into clear, actionable insights.
+
+## What ChengetAi does
+
+- **Farmer-facing tools:**  
+  Simple interfaces (mobile/web) that help farmers record activities, monitor fields, and receive timely alerts.
+
+- **Institution dashboards:**  
+  Aggregated views for ministries, NGOs, and financiers to track adoption, performance, and risk.
+
+- **Data and insight engine:**  
+  Ingestion of field data, weather, and market signals to power basic scoring, alerts, and reporting.
+
+## Current status
+
+ChengetAi is currently in the **prototype/experimentation** phase. This repository hosts:
+
+- A **public landing page** (this GitHub Pages site)  
+- High-level **documentation and concept notes**  
+- Early **technical experiments** as the platform evolves
+
+## Roadmap (high level)
+
+- **Phase 1:** Concept landing page, stakeholder demos, data model sketch  
+- **Phase 2:** Farmer and institution dashboards (MVP)  
+- **Phase 3:** Scoring, alerts, and integrations with partner systems  
+
+## Contributing
+
+For now, this is an internal project. If you’re interested in collaborating, please reach out to the ChengetAi team.
+
+## License
+
+TBD – license will be defined once the platform structure is finalized.
