@@ -6,7 +6,7 @@ This file provides guidance for AI assistants working with the ChengetAI reposit
 
 ChengetAi is a digital agriculture intelligence platform for Zimbabwe's agricultural sector. It helps farmers, institutions (NGOs, ministries, financiers), and other stakeholders make data-driven decisions by converting scattered field data into actionable insights.
 
-**Current status:** Prototype/experimentation phase (Phase 1). The repository currently contains only a static landing page deployed via GitHub Pages.
+**Current status:** Prototype/experimentation phase (Phase 1). The repository currently contains a static landing page deployed via GitHub Pages.
 
 ## Repository Structure
 
@@ -14,19 +14,18 @@ ChengetAi is a digital agriculture intelligence platform for Zimbabwe's agricult
 chengetAI-/
 ├── .github/
 │   └── workflows/
-│       └── static.yml      # GitHub Pages deployment workflow
-├── index.html               # Landing page (main application file)
+│       └── static.yml       # GitHub Pages deployment workflow
+├── index.html                # Landing page (main application file)
+├── styles.css                # Site styles (all CSS for index.html)
+├── .gitignore                # Git ignore rules
 ├── README.md                 # Project documentation
-├── Readme.hm                 # Duplicate README (identical content)
 └── CLAUDE.md                 # This file
 ```
-
-**Note:** `styles.css` is referenced in `index.html` but is not yet present in the repository.
 
 ## Tech Stack
 
 ### Current (Phase 1)
-- **Frontend:** Static HTML5/CSS
+- **Frontend:** Static HTML5 + CSS
 - **Deployment:** GitHub Pages (auto-deployed from `main` branch)
 
 ### Planned (Phase 2+)
@@ -41,6 +40,12 @@ chengetAI-/
 - The default branch is `main`
 - GitHub Pages deploys automatically on push to `main`
 
+### Running Locally
+No build step required. Open `index.html` directly in a browser or use any static server:
+```bash
+python3 -m http.server 8000
+```
+
 ### Deployment
 Deployment is handled by `.github/workflows/static.yml`:
 1. Triggers on push to `main` or manual workflow dispatch
@@ -48,8 +53,8 @@ Deployment is handled by `.github/workflows/static.yml`:
 3. Deploys to GitHub Pages
 4. No build step required (static files served directly)
 
-### No Build Tools
-There is currently no `package.json`, no bundler, no linter, and no test framework configured. The project is plain HTML/CSS with no build step.
+### Build Tools
+There is currently no `package.json`, no bundler, no linter, and no test framework. The project is plain HTML/CSS with no build step.
 
 ## Code Conventions
 
@@ -61,25 +66,23 @@ There is currently no `package.json`, no bundler, no linter, and no test framewo
 - Section comments: `<!-- SECTION NAME -->`
 - Anchor-based navigation using section `id` attributes
 
-### CSS Class Naming
-- Descriptive, hyphen-separated names: `header-container`, `hero-content`, `section-title`
+### CSS
+- Class naming: descriptive, hyphen-separated (`header-container`, `hero-content`, `section-title`)
 - Layout utilities: `container`, `grid-3`
 - Component pattern: `card`, `btn`
 - Modifiers: `primary`, `secondary`, `alt`
-- Section-scoped prefixes: `hero-buttons`, `contact-email`
+- Mobile-first responsive design with `@media` breakpoints
+- Color scheme: green palette (`#1a5632` primary, `#2d8659` accent)
 
 ## Key Files
 
 | File | Description |
 |------|-------------|
 | `index.html` | Landing page with platform overview, features, tech stack, and contact sections |
-| `README.md` | Project vision, status, roadmap, and contributing info |
+| `styles.css` | All styles for the landing page (layout, cards, responsive, colors) |
+| `README.md` | Project vision, tech stack, roadmap, getting started guide |
 | `.github/workflows/static.yml` | GitHub Pages CI/CD pipeline |
-
-## Known Issues
-
-- `styles.css` is linked in `index.html` but missing from the repository; the page currently renders without custom styles
-- `Readme.hm` is a duplicate of `README.md` with a non-standard file extension
+| `.gitignore` | Ignores OS files, editor files, env secrets, dependency dirs |
 
 ## Contact
 

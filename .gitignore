@@ -1,0 +1,31 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# Dependencies (for future use)
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build output (for future use)
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+npm-debug.log*
