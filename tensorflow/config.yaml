@@ -1,0 +1,33 @@
+# ChengetAI TensorFlow Project Configuration
+
+project:
+  name: "chengetai-agri-ml"
+  description: "Agricultural intelligence models for Zimbabwe"
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  image_size: [224, 224]
+  batch_size: 32
+  validation_split: 0.2
+  test_split: 0.1
+  seed: 42
+
+model:
+  # Options: "crop_disease", "yield_prediction", "spoilage_detection"
+  task: "crop_disease"
+  backbone: "resnet50"
+  num_classes: 10
+  dropout_rate: 0.3
+  learning_rate: 0.001
+
+training:
+  epochs: 50
+  early_stopping_patience: 10
+  reduce_lr_patience: 5
+  checkpoint_dir: "saved_models"
+  log_dir: "logs"
+
+inference:
+  model_path: "saved_models/best_model.keras"
+  confidence_threshold: 0.5

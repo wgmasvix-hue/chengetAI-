@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+
+# TensorFlow / ML
+saved_models/*.keras
+saved_models/*.h5
+saved_models/*.pb
+logs/
+*.tflite
+
+# Data (keep structure, ignore large datasets)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
