@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>ChengetAi Books – Affordable Academic PDFs, Delivered Instantly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Get academic and technical PDF books for just $1.87. Instant delivery. Science, engineering, computing, mathematics." />
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #fff;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* NAV */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 14px 0;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .nav-brand span { color: #e94560; }
+
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: #555;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: #1a1a2e; }
+
+        .nav-cta {
+            background: #e94560 !important;
+            color: #fff !important;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem !important;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover { background: #d63851 !important; }
+
+        /* HERO */
+        .hero {
+            padding: 140px 24px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #f8f9ff 0%, #fff 100%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight { color: #e94560; }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: #666;
+            max-width: 540px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+
+        /* WAITLIST FORM */
+        .waitlist-form {
+            display: flex;
+            gap: 10px;
+            max-width: 480px;
+            margin: 0 auto 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .waitlist-form input[type="email"] {
+            flex: 1;
+            min-width: 240px;
+            padding: 14px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .waitlist-form input[type="email"]:focus {
+            border-color: #e94560;
+        }
+
+        .waitlist-form button {
+            padding: 14px 28px;
+            background: #e94560;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .waitlist-form button:hover {
+            background: #d63851;
+            transform: translateY(-1px);
+        }
+
+        .waitlist-note {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .hero-social-proof {
+            margin-top: 48px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .proof-item {
+            text-align: center;
+        }
+
+        .proof-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1a1a2e;
+        }
+
+        .proof-label {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 80px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-alt {
+            background: #f8f9fa;
+        }
+
+        .section-alt .section {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header p {
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+
+        /* FEATURES GRID */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            padding: 32px 28px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            background: #fff;
+            transition: box-shadow 0.25s, transform 0.2s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        /* PRICING */
+        .pricing-card {
+            max-width: 420px;
+            margin: 0 auto;
+            background: #fff;
+            border: 2px solid #e94560;
+            border-radius: 16px;
+            padding: 40px 36px;
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #e94560;
+            color: #fff;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pricing-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 20px 0 8px;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #888;
+        }
+
+        .pricing-desc {
+            color: #666;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 28px;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: #444;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .pricing-features li::before {
+            content: "\2713";
+            color: #2e7d32;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        .pricing-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 14px;
+            background: #e94560;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .pricing-btn:hover { background: #d63851; }
+
+        /* BOOK PREVIEW */
+        .book-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .book-preview {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            padding: 24px 16px;
+            text-align: center;
+            color: #fff;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .book-preview:hover { transform: translateY(-3px); }
+
+        .book-preview:nth-child(2) { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .book-preview:nth-child(3) { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .book-preview:nth-child(4) { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .book-preview:nth-child(5) { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .book-preview:nth-child(6) { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
+
+        .book-preview-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .book-preview-author {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            margin-top: 6px;
+        }
+
+        /* HOW IT WORKS */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+            counter-reset: step;
+        }
+
+        .step {
+            text-align: center;
+            padding: 24px 16px;
+        }
+
+        .step-num {
+            width: 48px;
+            height: 48px;
+            background: #e94560;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+
+        .step h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* FINAL CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            opacity: 0.85;
+            max-width: 500px;
+            margin: 0 auto 32px;
+            font-size: 1rem;
+        }
+
+        .cta-section .waitlist-form input[type="email"] {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .cta-section .waitlist-form input[type="email"]::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .cta-section .waitlist-note { color: rgba(255, 255, 255, 0.5); }
+
+        /* FOOTER */
+        .footer {
+            background: #0d0d1a;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 32px 24px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer a { color: #e94560; }
+
+        /* SUCCESS MESSAGE */
+        .success-msg {
+            display: none;
+            color: #2e7d32;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 12px;
+        }
+
+        .success-msg.show { display: block; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 120px 20px 60px; }
+            .nav-links a:not(.nav-cta) { display: none; }
+            .hero-social-proof { gap: 24px; }
+            .pricing-card { padding: 32px 24px; }
+            .section { padding: 60px 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.6rem; }
+            .waitlist-form { flex-direction: column; }
+            .waitlist-form input[type="email"] { min-width: auto; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav-bar">
+    <div class="nav-inner">
+        <div class="nav-brand">Chenget<span>Books</span></div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#catalog">Books</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-badge">Now available — academic PDFs from $1.87</div>
+    <h1>Academic Books, <span class="highlight">Instantly Delivered</span> as PDF</h1>
+    <p class="hero-sub">
+        Get the textbooks you need for your studies at a fraction of the cost.
+        Science, engineering, computing, and mathematics — delivered to your inbox in minutes.
+    </p>
+
+    <form class="waitlist-form" id="waitlist-top" onsubmit="handleWaitlist(event, 'top')">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit">Join the Waitlist</button>
+    </form>
+    <p class="waitlist-note">Free to join. Be the first to access new titles.</p>
+    <p class="success-msg" id="success-top">You're on the list! We'll notify you when new books drop.</p>
+
+    <div class="hero-social-proof">
+        <div class="proof-item">
+            <div class="proof-number">9+</div>
+            <div class="proof-label">Books Available</div>
+        </div>
+        <div class="proof-item">
+            <div class="proof-number">$1.87</div>
+            <div class="proof-label">Per Book</div>
+        </div>
+        <div class="proof-item">
+            <div class="proof-number">PDF</div>
+            <div class="proof-label">Instant Delivery</div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<div class="section-alt">
+    <section class="section" id="features">
+        <div class="section-header">
+            <h2>Why ChengetBooks?</h2>
+            <p>Affordable, instant, and built for students in Africa and beyond.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">&#128176;</div>
+                <h3>Unbeatable Prices</h3>
+                <p>Every book at $1.87. No hidden fees, no subscriptions. Pay once, keep forever.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#9889;</div>
+                <h3>Instant Delivery</h3>
+                <p>Receive your PDF via email or WhatsApp within minutes after payment confirmation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128241;</div>
+                <h3>Read Anywhere</h3>
+                <p>PDF format works on any device — phone, tablet, laptop, or desktop. No special app needed.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128218;</div>
+                <h3>Curated Collection</h3>
+                <p>Handpicked academic and technical books from top publishers: Springer, Apress, Routledge.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128179;</div>
+                <h3>Local Payments</h3>
+                <p>Pay with EcoCash, bank transfer, or PayPal. Methods that work for you.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128172;</div>
+                <h3>WhatsApp Support</h3>
+                <p>Order and ask questions directly via WhatsApp. Human support, not bots.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- BOOK PREVIEW -->
+<section class="section" id="catalog">
+    <div class="section-header">
+        <h2>Featured Books</h2>
+        <p>A growing collection of academic and technical titles.</p>
+    </div>
+
+    <div class="book-preview-grid">
+        <div class="book-preview">
+            <div class="book-preview-title">Scientific Computing: A Historical Perspective</div>
+            <div class="book-preview-author">Bertil Gustafsson</div>
+        </div>
+        <div class="book-preview">
+            <div class="book-preview-title">The Executive's How-To Guide to Automation</div>
+            <div class="book-preview-author">George E. Danner</div>
+        </div>
+        <div class="book-preview">
+            <div class="book-preview-title">Pro DevOps with Google Cloud Platform</div>
+            <div class="book-preview-author">Pierluigi Riti</div>
+        </div>
+        <div class="book-preview">
+            <div class="book-preview-title">Ways of Thinking, Ways of Seeing</div>
+            <div class="book-preview-author">Chris Bissell &amp; Chris Dillon</div>
+        </div>
+        <div class="book-preview">
+            <div class="book-preview-title">Math Mutation Classics</div>
+            <div class="book-preview-author">Erik Seligman</div>
+        </div>
+        <div class="book-preview">
+            <div class="book-preview-title">Knowledge Architectures</div>
+            <div class="book-preview-author">Denise Bedford</div>
+        </div>
+    </div>
+
+    <p style="text-align:center;margin-top:28px;">
+        <a href="books.html" style="color:#e94560;font-weight:600;font-size:0.95rem;">
+            View Full Catalog &rarr;
+        </a>
+    </p>
+</section>
+
+<!-- HOW IT WORKS -->
+<div class="section-alt">
+    <section class="section">
+        <div class="section-header">
+            <h2>How It Works</h2>
+            <p>Three simple steps to get your books.</p>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h3>Browse &amp; Choose</h3>
+                <p>Find the books you need from our curated catalog of academic titles.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h3>Pay Your Way</h3>
+                <p>Use EcoCash, bank transfer, or PayPal. Just $1.87 per book.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h3>Get Your PDF</h3>
+                <p>Receive your book via email or WhatsApp within minutes. Start reading instantly.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+    <div class="section-header">
+        <h2>Simple Pricing</h2>
+        <p>No subscriptions. No hidden fees. Just books.</p>
+    </div>
+
+    <div class="pricing-card">
+        <div class="pricing-badge">Most Popular</div>
+        <h3>Per Book</h3>
+        <div class="pricing-price">$1.87 <span>/ book</span></div>
+        <p class="pricing-desc">One price, every book in our catalog.</p>
+
+        <ul class="pricing-features">
+            <li>Full PDF book, no restrictions</li>
+            <li>Instant delivery via email or WhatsApp</li>
+            <li>Keep forever — no expiry</li>
+            <li>EcoCash, bank transfer, or PayPal</li>
+            <li>New titles added weekly</li>
+        </ul>
+
+        <a href="books.html" class="pricing-btn">Browse Books</a>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section" id="waitlist">
+    <h2>Be the First to Know</h2>
+    <p>Join our waitlist and get notified when new academic titles are added to the catalog.</p>
+
+    <form class="waitlist-form" id="waitlist-bottom" onsubmit="handleWaitlist(event, 'bottom')">
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit">Join Waitlist</button>
+    </form>
+    <p class="waitlist-note">No spam. Unsubscribe anytime.</p>
+    <p class="success-msg" id="success-bottom">You're on the list! We'll notify you when new books drop.</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>&copy; 2026 ChengetBooks &mdash; Affordable Academic PDFs. <a href="mailto:info@chengetai.org">info@chengetai.org</a></p>
+</footer>
+
+<script>
+function handleWaitlist(e, location) {
+    e.preventDefault();
+    var form = e.target;
+    var email = form.querySelector('input[type="email"]').value;
+
+    var subject = encodeURIComponent('Waitlist Signup');
+    var body = encodeURIComponent('New waitlist signup: ' + email);
+    var mailtoLink = 'mailto:info@chengetai.org?subject=' + subject + '&body=' + body;
+    window.open(mailtoLink, '_blank');
+
+    form.style.display = 'none';
+    document.getElementById('success-' + location).classList.add('show');
+}
+</script>
+
+</body>
+</html>
